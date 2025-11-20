@@ -13,7 +13,7 @@ public class NinjaController {
         return List.of();
     }
 
-    @GetMapping
+    @GetMapping("{id}")
     public NinjaModel obterNinja(Long id) {
         return new NinjaModel();
     }
@@ -33,7 +33,7 @@ public class NinjaController {
         return new NinjaModel();
     }
 
-    @PostMapping
+    @PostMapping("{ninjaId}")
     public MissaoModel atribuirMissao(Long ninjaId, Long missaoId) {
         return new MissaoModel();
     }

@@ -14,14 +14,14 @@ public class MissaoController {
         return List.of();
     }
 
-    @GetMapping
+    @GetMapping("{id}")
     public MissaoModel obterMissao(Long id) {
         return new MissaoModel();
     }
 
     @PostMapping
-    public MissaoModel criarMissao() {
-        return new MissaoModel();
+    public MissaoModel criarMissao(MissaoModel missaoModel) {
+        return missaoModel;
     }
 
     @PutMapping
@@ -34,7 +34,7 @@ public class MissaoController {
         return new MissaoModel();
     }
 
-    @PostMapping
+    @PostMapping("{missaoId}")
     public List<NinjaModel> atribuirNinjas(Long missaoId, Long[] ninjaId) {
         return List.of();
     }
