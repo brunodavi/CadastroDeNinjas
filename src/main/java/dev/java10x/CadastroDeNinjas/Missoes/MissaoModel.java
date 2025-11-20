@@ -16,7 +16,7 @@ import java.util.List;
 public class MissaoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String titulo;
     private String descricao;

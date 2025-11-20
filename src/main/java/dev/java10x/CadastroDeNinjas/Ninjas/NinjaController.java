@@ -14,7 +14,7 @@ public class NinjaController {
     }
 
     @GetMapping
-    public NinjaModel obterNinja(long id) {
+    public NinjaModel obterNinja(Long id) {
         return new NinjaModel();
     }
 
@@ -29,12 +29,12 @@ public class NinjaController {
     }
 
     @DeleteMapping
-    public NinjaModel removerNinja(long id) {
+    public NinjaModel removerNinja(Long id) {
         return new NinjaModel();
     }
 
     @PostMapping
-    public MissaoModel atribuirMissao(long ninjaId, long missaoId) {
+    public MissaoModel atribuirMissao(Long ninjaId, Long missaoId) {
         return new MissaoModel();
     }
 }

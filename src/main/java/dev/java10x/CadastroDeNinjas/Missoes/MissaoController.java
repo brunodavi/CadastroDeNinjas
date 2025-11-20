@@ -15,7 +15,7 @@ public class MissaoController {
     }
 
     @GetMapping
-    public MissaoModel obterMissao(long id) {
+    public MissaoModel obterMissao(Long id) {
         return new MissaoModel();
     }
 
@@ -25,17 +25,17 @@ public class MissaoController {
     }
 
     @PutMapping
-    public MissaoModel atualizarMissao(long id, MissaoModel missaoModel) {
+    public MissaoModel atualizarMissao(Long id, MissaoModel missaoModel) {
         return missaoModel;
     }
 
     @DeleteMapping
-    public MissaoModel removerMissao(long id) {
+    public MissaoModel removerMissao(Long id) {
         return new MissaoModel();
     }
 
     @PostMapping
-    public List<NinjaModel> atribuirNinjas(long missaoId, long[] ninjaId) {
+    public List<NinjaModel> atribuirNinjas(Long missaoId, Long[] ninjaId) {
         return List.of();
     }
 }
