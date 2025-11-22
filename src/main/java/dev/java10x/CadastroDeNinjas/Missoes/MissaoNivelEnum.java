@@ -1,10 +1,10 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
 
 public enum MissaoNivelEnum {
-    S,
-    A,
-    B,
-    C,
+    E,
     D,
-    E;
+    C,
+    B,
+    A,
+    S;
 }
