@@ -21,6 +21,7 @@ public class NinjaModel {
 
     @Column(unique = true)
     private String email;
+    private String imgUrl;
 
     // Muitos ninjas para uma missão
     @ManyToOne
