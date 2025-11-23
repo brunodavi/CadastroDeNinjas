@@ -21,6 +21,8 @@ public class MissaoModel {
     private String titulo;
     private String descricao;
     private boolean missaoConcluida;
+
+    @Enumerated(EnumType.STRING)
     private MissaoNivelEnum missaoNivelEnum;
 
     // Uma missão para muitos ninjas
