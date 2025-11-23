@@ -1,21 +1,32 @@
 package dev.java10x.CadastroDeNinjas.Ninjas;
 
 import dev.java10x.CadastroDeNinjas.Missoes.MissaoModel;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/ninja")
 public class NinjaController {
-    @GetMapping
-    public List<NinjaModel> listarNinjas() {
-        return List.of();
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
     }
 
-    @GetMapping("{id}")
-    public NinjaModel obterNinja(Long id) {
-        return new NinjaModel();
+    @GetMapping
+    public List<NinjaModel> listarNinjas() {
+        return ninjaService.listarNinja();
+    }
+
+    @GetMapping("/{id}")
+    public NinjaModel obterNinja(@PathVariable Long id) {
+        NinjaModel ninja = ninjaService.obterNinja(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Ninja não encontrado"));
+
+        return ninja;
     }
 
     @PostMapping
@@ -28,13 +39,13 @@ public class NinjaController {
         return ninjaModel;
     }
 
-    @DeleteMapping
-    public NinjaModel removerNinja(Long id) {
+    @DeleteMapping("/{id}")
+    public NinjaModel removerNinja(@PathVariable Long id) {
         return new NinjaModel();
     }
 
-    @PostMapping("{ninjaId}")
-    public MissaoModel atribuirMissao(Long ninjaId, Long missaoId) {
+    @PostMapping("/{ninjaId}")
+    public MissaoModel atribuirMissao(@PathVariable Long ninjaId, Long missaoId) {
         return new MissaoModel();
     }
 }
