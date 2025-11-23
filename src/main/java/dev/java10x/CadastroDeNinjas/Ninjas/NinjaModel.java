@@ -23,6 +23,8 @@ public class NinjaModel {
     private String email;
     private String imgUrl;
 
+    private String rank;
+
     // Muitos ninjas para uma missão
     @ManyToOne
     @JoinColumn(name = "missao_id")
